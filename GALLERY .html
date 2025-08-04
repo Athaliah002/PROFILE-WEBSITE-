@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery | My Student Site</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Background */
+    body::before {
+      content: "";
+      background: url("/storage/emulated/0/Download/220122.gif") no-repeat center center fixed;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      opacity: 0.65;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: rgba(128, 0, 128, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-links li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      color: #4b0082;
+    }
+
+    main h1 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      color: #5e2a84;
+      margin-bottom: 15px;
+      margin-top: 40px;
+      text-align: left;
+      border-left: 5px solid #a64ca6;
+      padding-left: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 0 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: rgba(224, 204, 255, 0.9);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #4b0082;
+      margin-top: 40px;
+    }
+
+    /* Modal Zoom */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 10px;
+    }
+
+    .modal-content, .modal-close {
+      animation: zoom 0.3s;
+    }
+
+    @keyframes zoom {
+      from { transform: scale(0.7); opacity: 0 }
+      to { transform: scale(1); opacity: 1 }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      .modal-content {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">My Student Site</div>
+    <ul class="nav-links">
+      <li><a href="CLARIÑO WEBSITE PAGE.html">Home</a></li>
+      <li><a href="ABOUT ME WEB.html">About</a></li>
+      <li><a href="GALLERY.html">Gallery</a></li>
+      <li><a href="Portfolio .html">Portfolio</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Gallery Content -->
+  <main>
+    <h1>📸 My Gallery</h1>
+    <p>These are some of my favorite memories with my loved ones.</p>
+
+    <!-- Family -->
+    <h2 class="section-title">👨‍👩‍👧‍👦 Family Photos</h2>
+    <div class="gallery">
+      <img src="/storage/emulated/0/DCIM/Camera/IMG_20221231_221734.jpg" alt="Family 1">
+      <img src="/storage/emulated/0/DCIM/Camera/IMG_20221231_191714.jpg" alt="Family 2">
+      <img src="/storage/emulated/0/Pictures/Instagram/IMG_20211129_165158_327.jpg" alt="Family 3">
+      <img src="/storage/emulated/0/Pictures/Collage/IMG_20250101_110517.jpg" alt="Family 4">
+    </div>
+
+    <!-- Friends -->
+    <h2 class="section-title">👫 Friends Photos</h2>
+    <div class="gallery">
+      <img src="/storage/emulated/0/DCIM/Camera/IMG_20241009_091118.jpg" alt="Friend 1">
+      <img src="/storage/emulated/0/Pictures/Messenger/Messenger_creation_DACC7765-449B-476A-ADEF-A861C6A32F14.jpeg" alt="Friend 2">
+      <img src="/storage/emulated/0/Pictures/Messenger/received_1211752513584024.jpeg" alt="Friend 3">
+      <img src="/storage/emulated/0/Pictures/Messenger/Messenger_creation_3d52bebd-2100-46b8-bede-e769b03330c0.jpeg" alt="Friend 4">
+      <img src="/storage/emulated/0/Pictures/Messenger/received_2974702359345951.jpeg" alt="Friend 5">
+      <img src="/storage/emulated/0/DCIM/Camera/IMG_20250626_121536.jpg" alt="Friend 6">
+      <img src="/storage/emulated/0/DCIM/Camera/IMG_20250411_162738.jpg" alt="Friend 7">
+      <img src="/storage/emulated/0/Pictures/Messenger/received_521433874382761.jpeg" alt="Friend 8">
+    </div>
+
+    <!-- Self -->
+    <h2 class="section-title">🧍 Athaliah’s Photos</h2>
+    <div class="gallery">
+      <img src="/storage/emulated/0/DCIM/Camera/IMG_20250801_181703.jpg" alt="Athaliah 1">
+      <img src="/storage/emulated/0/Download/_MG_0528.JPG" alt="Athaliah 2">
+      <img src="/storage/emulated/0/.vivoNotes/IMG_20250724_01021574_gallery_thumb.JPG" alt="Athaliah 3">
+      <img src="/storage/emulated/0/.vivoNotes/IMG_20250724_01021413_gallery_thumb.JPG" alt="Athaliah 4">
+    </div>
+  </main>
+
+  <!-- Modal for Zoom -->
+  <div id="modal" class="modal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Athaliah Jane P. Clariño</p>
+  </footer>
+
+  <!-- Script for Zoom -->
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Close on outside click
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
+z
